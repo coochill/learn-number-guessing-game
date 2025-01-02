@@ -1,0 +1,102 @@
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "$HISTCONTROL" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+touch number_guessing_game
+cd number_guessing_game
+mkdir number_guessing_game
+cd number_guessing_game
+touch number_guess.sh
+chmod +x number_guess.sh
+psql --username=freecodecamp --dbname=postgres
+pg_dump -cC --inserts -U freecodecamp number_guess > number_guess.sql
+pg_dump -cC --inserts -U freecodecamp guess > number_guess.sql
+psql -U postgres < number_guess.sql
+git init
+git add .
+git commit -m "Iniial commit"
+git rebase -i --root
+./number_guess.sh
+./number_guess.sh
+./number_guess.sh
+./number_guess.sh
+git add .
+git commit -m "fix: correct logic for number guessing validation"
+git status
+git log --oneline
+git remote -v
+git remote set-url origin https://github.com/coochill/number-guess.git
+git remote set-url origin https://github.com/coochill/number-guess.git
+git remote add origin https://github.com/coochill/number-guess.git
+git remote -v
+git push origin main
+git remote -v
+git branch
+git add .
+git commit -m "fix: correct logic for number guessing validation "
+git commit -m "fix: correct logic for number guessing validation "
+git commit -m "fix: correct logic for number guessing validation"
+git status
+git add ngg
+git add .
+git commit -m "fix: correct logic for number guessing validation"
+git add number_guess.sh
+git commit -m "fix: correct logic for number guessing validation"
+git commit -m "refactor: simplify number generation logic"
+git log --oneline
+git rebase -i --root
+git rebase --continue
+git commit -m "fix: correct logic for number guessing validation"
+git add number_guess.sql
+git commit -m "test: add unit tests for number generation function"
+git branch
+git checkout main
+git checkout -b main
+git branch
+git commit -m "fix: correct logic for number guessing validation"
+git checkout main
+git add .
+psql -U postgres < number_guess.sql
+git add .
+git commit -m "fix: correct logic for number guessing validation"
+git push origin main
+git push --force
+git add .
+git commit -m "fix: correct logic for number guessing validation"
+git add .
+git commit -m "feat: add high score tracking feature"
+git add .
+git commit -m "refactor: simplify number generation logic"
+git add .
+git commit -m "chore: update project dependencies"
+./number_guess.sh
+./number_guess.sh
+git add .
+git commit -m "test: add unit tests for number generation function"
